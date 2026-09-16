@@ -1,0 +1,13 @@
+{
+  "name": "Restaurante Bronco",
+  "short_name": "Bronco",
+  "description": "Un clásico panameño en Chanis desde 1986.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffaf0",
+  "theme_color": "#d7282f",
+  "icons": [
+    {"src": "/assets/images/apple-touch-icon.png", "sizes": "180x180", "type": "image/png"},
+    {"src": "/assets/images/favicon.png", "sizes": "32x32", "type": "image/png"}
+  ]
+}
