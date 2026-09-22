@@ -35,4 +35,4 @@
     }
   });
 
-})();
+document.querySelectorAll('[data-map-load]').forEach((button) => { button.addEventListener('click', () => { const shell = button.closest('[data-map-shell]'); if (!shell || shell.dataset.loaded === 'true') return; const iframe = document.createElement('iframe'); iframe.className = 'map'; iframe.title = 'Mapa de Restaurante Bronco'; iframe.src = shell.dataset.mapSrc; iframe.loading = 'lazy'; iframe.referrerPolicy = 'no-referrer-when-downgrade'; iframe.allowFullscreen = true; shell.replaceChildren(iframe); shell.dataset.loaded = 'true'; }); }); })();
