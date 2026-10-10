@@ -114,8 +114,8 @@
                   <div class="form-grid">
                     <div class="form-field"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" for="FIRSTNAME">Nombre</label><div class="entry__field"><input class="input" maxlength="200" type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="given-name" placeholder="Escribe tu nombre" data-required="true" required></div></div><label class="entry__error entry__error--primary"></label></div></div></div>
                     <div class="form-field"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" for="LASTNAME">Apellido</label><div class="entry__field"><input class="input" maxlength="200" type="text" id="LASTNAME" name="LASTNAME" autocomplete="family-name" placeholder="Escribe tu apellido" data-required="true" required></div></div><label class="entry__error entry__error--primary"></label></div></div></div>
-                    <div class="form-field"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" for="EMAIL">Correo electrónico</label><div class="entry__field"><input class="input" type="email" data-type="email" id="EMAIL" name="EMAIL" autocomplete="email" placeholder="nombre@correo.com" data-required="true" required></div></div><label class="entry__error entry__error--primary"></label></div></div></div>
-                    <div class="form-field"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" for="BIRTHDAY">Fecha de nacimiento</label><div class="entry__field"><input class="input" maxlength="10" type="text" data-type="date" id="BIRTHDAY" name="BIRTHDAY" autocomplete="off" placeholder="dd-mm-aaaa" data-required="true" data-format="dd-mm-yyyy" pattern="^[0-9]{2}-[0-9]{2}-[0-9]{4}$" inputmode="numeric" required></div></div><label class="entry__error entry__error--primary"></label><p class="entry__specification">dd-mm-aaaa</p></div></div></div>
+                    <div class="form-field form-field-full"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" for="EMAIL">Correo electrónico</label><div class="entry__field"><input class="input" type="email" data-type="email" id="EMAIL" name="EMAIL" autocomplete="email" placeholder="nombre@correo.com" data-required="true" required></div></div><label class="entry__error entry__error--primary"></label></div></div></div>
+                    <div class="form-field form-field-full"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" for="DOB_D" id="DOB_LABEL">Fecha de nacimiento</label><div class="entry__field dob-field"><div class="dob" role="group" aria-labelledby="DOB_LABEL"><select class="input dob-d" id="DOB_D" aria-label="Día" autocomplete="bday-day"><option value="">Día</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select><select class="input dob-m" id="DOB_M" aria-label="Mes" autocomplete="bday-month"><option value="">Mes</option><option value="1">Enero</option><option value="2">Febrero</option><option value="3">Marzo</option><option value="4">Abril</option><option value="5">Mayo</option><option value="6">Junio</option><option value="7">Julio</option><option value="8">Agosto</option><option value="9">Septiembre</option><option value="10">Octubre</option><option value="11">Noviembre</option><option value="12">Diciembre</option></select><input class="input dob-y" id="DOB_Y" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="Año" aria-label="Año" autocomplete="bday-year"></div><input type="hidden" id="BIRTHDAY" name="BIRTHDAY" value=""></div></div><label class="entry__error entry__error--primary"></label></div></div></div>
                     <div class="form-field form-field-full"><div class="sib-sms-field sib-form-block" data-required="1"><div class="form__entry entry_block"><label class="entry__label" for="SMS">WhatsApp</label><div class="sms-input-group"><div class="sib-sms-input" data-placeholder="6000-0000" data-required="1" data-country-code="PA" data-value=""><div class="entry__field"><select class="input" name="SMS__COUNTRY_CODE" aria-label="Código de país" data-required="true" required><option value="+507" data-country-code="PA" selected>Panamá (+507)</option></select></div><div class="entry__field"><input type="tel" class="input" id="SMS" name="SMS" autocomplete="tel-national" placeholder="6000-0000" data-required="true" required></div></div><div class="sib-sms-tooltip"><div class="sib-sms-tooltip__box">Incluye tu número de WhatsApp.</div><span class="sib-sms-tooltip__icon">?</span></div></div><label class="entry__error entry__error--primary"></label></div></div></div>
                   </div>
                   <label class="form-consent" for="ACEPTA_TERMINOS_CLUB"><input type="checkbox" id="ACEPTA_TERMINOS_CLUB" name="ACEPTA_TERMINOS_CLUB" value="1" data-required="true" required><span>He leído y acepto los <a href="/club-leyendas/terminos/">términos y condiciones</a> del programa.</span></label>
@@ -163,79 +163,82 @@
   <script>window.REQUIRED_CODE_ERROR_MESSAGE='Elige un código de país';window.LOCALE='es';window.EMAIL_INVALID_MESSAGE='El correo electrónico no es válido.';window.SMS_INVALID_MESSAGE='El número de WhatsApp no es válido.';window.REQUIRED_ERROR_MESSAGE='Este campo es obligatorio.';window.GENERIC_INVALID_MESSAGE='La información no es válida.';window.translation={common:{selectedList:'{quantity} lista seleccionada',selectedLists:'{quantity} listas seleccionadas',selectedOption:'{quantity} opción seleccionada',selectedOptions:'{quantity} opciones seleccionadas'}};var AUTOHIDE=Boolean(0);</script>
   <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
   <script src="/assets/site.js" defer></script>
+  <style>.club-form-shell .entry__field.dob-field{border:0!important;background:transparent!important;box-shadow:none!important;min-height:0!important}.dob{display:grid;grid-template-columns:1fr 1.7fr 1.15fr;gap:8px;width:100%}.club-form-shell .dob .input{width:100%!important;min-width:0;box-sizing:border-box;background-color:var(--white,#fff)!important;border:1px solid var(--line)!important;border-radius:0!important}.club-form-shell .dob .input:focus{outline:none;border-color:var(--navy)!important;box-shadow:rgba(0,72,118,.18) 0 0 0 2px!important}.club-form-shell .dob select.input{-webkit-appearance:none!important;appearance:none!important;padding-right:28px!important;background-image:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%278%27 viewBox=%270 0 12 8%27%3E%3Cpath d=%27M1 1l5 5 5-5%27 fill=%27none%27 stroke=%27%23777%27 stroke-width=%271.6%27/%3E%3C/svg%3E")!important;background-repeat:no-repeat!important;background-position:right 10px center!important;background-size:12px 8px!important;cursor:pointer}.club-form-shell .dob select.input.is-empty{color:#8a8a8a!important}.club-form-shell .dob .input.dob-bad{border-color:#c0392b!important}</style>
   <script>
-  /* Club: fecha de nacimiento — sin fechas futuras ni del año en curso */
+  /* Fecha de nacimiento en tres campos: Día · Mes · Año. Solo mayores de 18, sin fechas inexistentes. */
   (function(){
-    var MIN_YEAR = 1900;
-    function maxYear(){ return new Date().getFullYear() - 1; }
-    function parse(v){
-      var m = /^(\d{2})-(\d{2})-(\d{4})$/.exec((v||'').trim());
-      if(!m) return null;
-      var d = +m[1], mo = +m[2], y = +m[3];
-      var dt = new Date(y, mo-1, d);
-      if(dt.getFullYear()!==y || dt.getMonth()!==mo-1 || dt.getDate()!==d) return null;
-      return dt;
-    }
-    function showErr(input, msg){
-      var box = input.closest('.form__entry');
-      var l = box && box.querySelector('.entry__error');
+    var MIN_YEAR = 1900, MIN_AGE = 18;
+    var MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+    var T = {"incompleto":"Selecciona el día y el mes, y escribe el año de nacimiento.","dia":"Selecciona el día de nacimiento.","mes":"Selecciona el mes de nacimiento.","anio":"Escribe el año de nacimiento con 4 dígitos, por ejemplo 1985.","anioMin":"Escribe un año de nacimiento a partir de 1900.","edad":"Para inscribirte debes ser mayor de edad (18 años o más).","noExiste":"Esa fecha no existe: {M} tiene solo {N} días. Revisa el día."};
+    function $(id){ return document.getElementById(id); }
+    function dim(m, y){ return new Date(y || 2000, m, 0).getDate(); }
+    function cap(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+    function box(){ var d = $("DOB_D"); return d && d.closest(".form__entry"); }
+    function showErr(msg, bad){
+      var b = box(); if(!b) return;
+      var l = b.querySelector(".entry__error");
+      ["DOB_D","DOB_M","DOB_Y"].forEach(function(id){ var el = $(id); if(el) el.classList.toggle("dob-bad", !!bad && bad.indexOf(id) > -1); });
       if(!l) return;
-      l.textContent = msg;
-      l.style.display = msg ? 'block' : 'none';
-      l.style.padding = msg ? '8px 12px' : '';
-      l.style.marginTop = msg ? '6px' : '';
+      l.textContent = msg || "";
+      l.style.display = msg ? "block" : "none";
+      l.style.padding = msg ? "8px 12px" : "";
+      l.style.marginTop = msg ? "6px" : "";
     }
-    var busy = false;
-    function prune(){
-      if(busy) return;
-      var sel = document.querySelector('.pika-select-year');
-      if(!sel) return;
-      var top = maxYear();
-      Array.prototype.slice.call(sel.options).forEach(function(o){
-        var y = parseInt(o.value, 10);
-        if(y > top || y < MIN_YEAR) o.remove();
+    function paint(){ ["DOB_D","DOB_M"].forEach(function(id){ var el = $(id); if(el) el.classList.toggle("is-empty", !el.value); }); }
+    /* final=true: exige los tres campos (al enviar). final=false: valida solo lo que ya está escrito. */
+    function check(final){
+      var d = +$("DOB_D").value, m = +$("DOB_M").value, ys = ($("DOB_Y").value || "").trim();
+      var hidden = $("BIRTHDAY"); hidden.value = "";
+      var thisYear = new Date().getFullYear();
+      var y = /^\d{4}$/.test(ys) ? +ys : 0;
+      if(ys.length === 4 || (final && ys)){
+        if(!y) return {msg: T.anio, bad: ["DOB_Y"]};
+        if(y < MIN_YEAR) return {msg: T.anioMin, bad: ["DOB_Y"]};
+        if(y > thisYear - MIN_AGE) return {msg: T.edad, bad: ["DOB_Y"]};
+      }
+      if(d && m && d > dim(m, y || 2000)){
+        var n = dim(m, y || 2000);
+        var mes = MESES[m-1] + (m === 2 && y ? " de " + y : "");
+        return {msg: T.noExiste.replace("{M}", cap(mes)).replace("{N}", n), bad: ["DOB_D"]};
+      }
+      if(final){
+        if(!d && !m && !ys) return {msg: T.incompleto, bad: ["DOB_D","DOB_M","DOB_Y"]};
+        if(!d) return {msg: T.dia, bad: ["DOB_D"]};
+        if(!m) return {msg: T.mes, bad: ["DOB_M"]};
+        if(!y) return {msg: T.anio, bad: ["DOB_Y"]};
+      }
+      if(d && m && y){
+        var lim = new Date(); lim.setHours(0,0,0,0); lim.setFullYear(lim.getFullYear() - MIN_AGE);
+        if(new Date(y, m-1, d) > lim) return {msg: T.edad, bad: ["DOB_D","DOB_M","DOB_Y"]};
+        hidden.value = (d < 10 ? "0" : "") + d + "-" + (m < 10 ? "0" : "") + m + "-" + y;
+      }
+      return null;
+    }
+    function live(final){ var r = check(final); showErr(r ? r.msg : "", r ? r.bad : null); paint(); return r; }
+    function init(){
+      var D = $("DOB_D"), M = $("DOB_M"), Y = $("DOB_Y");
+      if(!D || !M || !Y) return;
+      D.addEventListener("change", function(){ live(false); });
+      M.addEventListener("change", function(){ live(false); });
+      Y.addEventListener("input", function(){
+        var c = Y.value.replace(/\D/g, "").slice(0, 4);
+        if(c !== Y.value) Y.value = c;
+        live(false);
       });
-      var lab = sel.parentElement;
-      if(!lab) return;
-      var shown = parseInt([].filter.call(lab.childNodes, function(c){ return c.nodeType === 3; })
-                             .map(function(c){ return c.textContent.trim(); }).join(''), 10);
-      if(shown > top){
-        busy = true;
-        sel.value = String(top);
-        sel.dispatchEvent(new Event('change', {bubbles:true}));
-        setTimeout(function(){ busy = false; prune(); }, 400);
-      }
+      Y.addEventListener("blur", function(){ if(Y.value) live(true); });
+      paint();
     }
-    var mo = new MutationObserver(function(){ prune(); });
-    mo.observe(document.documentElement, {childList:true, subtree:true});
-    document.addEventListener('focusin', function(e){ if(e.target && e.target.id==='BIRTHDAY') setTimeout(prune, 60); });
-    document.addEventListener('click', function(e){ if(e.target && e.target.closest && e.target.closest('.pika-single')) setTimeout(prune, 60); }, true);
-
-    window.addEventListener('submit', function(e){
-      var f = e.target; if(!f || f.id!=='sib-form') return;
-      var i = f.querySelector('#BIRTHDAY'); if(!i) return;
-      var dt = parse(i.value), hoy = new Date(); hoy.setHours(0,0,0,0);
-      var msg = '';
-      if(!dt){
-        msg = 'Escribe tu fecha de nacimiento en formato dd-mm-aaaa, por ejemplo 15-03-1985.';
-      } else if(dt > hoy){
-        msg = 'La fecha de nacimiento no puede ser una fecha futura. Por favor, revísala.';
-      } else if(dt.getFullYear() > maxYear()){
-        msg = 'La fecha de nacimiento debe ser de un año anterior a ' + new Date().getFullYear() + '.';
-      } else if(dt.getFullYear() < MIN_YEAR){
-        msg = 'Escribe un año de nacimiento válido, a partir de ' + MIN_YEAR + '.';
-      }
-      if(msg){
+    if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+    window.addEventListener("submit", function(e){
+      var f = e.target; if(!f || f.id !== "sib-form" || !$("DOB_D")) return;
+      var r = live(true);
+      if(r){
         e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
-        showErr(i, msg);
-        if(i.blur) i.blur();
-        i.scrollIntoView({block:'center', behavior:'smooth'});
-      } else {
-        showErr(i, '');
+        var el = $(r.bad[0]);
+        if(el){ el.scrollIntoView({block: "center", behavior: "smooth"}); try{ el.focus({preventScroll: true}); }catch(_){} }
       }
     }, true);
-    document.addEventListener('input', function(e){ if(e.target && e.target.id==='BIRTHDAY') showErr(e.target, ''); });
   })();
-  </script>
+</script>
 </body>
 </html>
