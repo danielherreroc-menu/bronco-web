@@ -6,12 +6,16 @@ const PIXEL_NOSCRIPT = `<noscript><img height="1" width="1" style="display:none"
 
 const LEAD_SCRIPT = `<script>(function(){var fired=false;function visible(el){if(!el)return false;var cs=window.getComputedStyle(el);return cs.display!=='none'&&cs.visibility!=='hidden'&&el.offsetParent!==null}function check(){if(fired)return;if(!visible(document.getElementById('success-message')))return;fired=true;if(typeof window.fbq==='function'){fbq('track','Lead',{content_name:'Club Leyendas de Bronco'})}}try{new MutationObserver(check).observe(document.documentElement,{attributes:true,childList:true,subtree:true,attributeFilter:['style','class']});document.addEventListener('submit',function(){setTimeout(check,1500);setTimeout(check,4000)},true);check()}catch(e){}})()</script>`;
 
+// Pop-up de inscripcion al Club (reglas en /assets/club-popup.v1.js). Se carga diferido en todas las paginas.
+const POPUP_SCRIPT = '<script src="/assets/club-popup.v1.js" defer></script>';
+
 class InjectHead { element(element) { element.append(PIXEL_HEAD, { html: true }); } }
 
 class InjectBody {
   constructor(isClub) { this.isClub = isClub; }
   element(element) {
     element.prepend(PIXEL_NOSCRIPT, { html: true });
+    element.append(POPUP_SCRIPT, { html: true });
     if (this.isClub) element.append(LEAD_SCRIPT, { html: true });
   }
 }
