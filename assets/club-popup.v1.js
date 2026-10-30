@@ -62,7 +62,7 @@ window.__GH_CLUB_POPUP__ = {
   "beneficios": [
    "Postre gratis para el cumpleañero",
    "¿Traes tu pastel? No te cobramos descorche",
-   "15% en tu próxima visita, en toda la cuenta"
+   "15% en tu próxima visita, hasta $50"
   ],
   "conocer": "Conoce el Club Leyendas",
   "capEyebrow": "Durante todo tu mes",
