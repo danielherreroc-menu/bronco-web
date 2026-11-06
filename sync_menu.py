@@ -11,6 +11,8 @@ import os
 import re
 import sys
 
+from menu_schema import apply_menu_schema
+
 SHEET_ID = os.environ.get("SHEET_ID", "1-DVpgI_4d0FNxVIgR-5Qyg6s4nbgt2OjYpXjTogJY_g")
 GID = os.environ.get("SHEET_GID", "0")
 CARTA_PATH = "carta/index.html"
@@ -94,6 +96,14 @@ def main():
             print(f"AVISO: no se encontró el bloque para grupo '{grupo}' (id={gid})", file=sys.stderr)
             continue
         html_doc = html_doc[: m.start(2)] + "\n          " + new_list + "\n        " + html_doc[m.end(2):]
+
+    html_doc = apply_menu_schema(
+        html_doc,
+        menu_id="https://restaurantebronco.com/carta/#menu",
+        name="Carta de Restaurante Bronco",
+        url="https://restaurantebronco.com/carta/",
+        provider_id="https://restaurantebronco.com/#restaurant",
+    )
 
     with open(CARTA_PATH, "w", encoding="utf-8") as f:
         f.write(html_doc)
