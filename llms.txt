@@ -22,3 +22,6 @@ Restaurante Bronco es un restaurante panameño en Chanis, Ciudad de Panamá, abi
 ## Historia
 
 Bronco abrió en Chanis en 1986. La carreta amarilla, el letrero de 24 horas y los manteles a cuadros son parte de su identidad desde entonces.
+
+## Historias de la casa
+- [Sopa de pecho](https://restaurantebronco.com/sopa-de-pecho/): nació como la sopa del personal hasta que Máximo Herrero la probó y la puso en la carta.
