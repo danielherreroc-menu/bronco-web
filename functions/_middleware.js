@@ -13,7 +13,7 @@ const POPUP_SCRIPT_NAVIDAD = '<script src="/assets/navidad-popup.v1.js" defer></
 const POPUP_NAVIDAD_HASTA = 1799298000000;
 
 // Versiona /assets/*.js y *.css (se sirven con caché de 1 año): subir ASSET_V cada vez que cambie site.js o style.css.
-const ASSET_V = '20261108';
+const ASSET_V = '20261108b';
 class BumpAssets { element(e) { for (const a of ['src', 'href']) { const v = e.getAttribute(a); if (v && v.startsWith('/assets/') && /\.(js|css)$/.test(v)) e.setAttribute(a, v + '?v=' + ASSET_V); } } }
 
 class InjectHead { element(element) { element.append(PIXEL_HEAD, { html: true }); } }
