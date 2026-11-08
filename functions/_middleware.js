@@ -12,6 +12,10 @@ const POPUP_SCRIPT_CLUB = '<script src="/assets/club-popup.v1.js" defer></script
 const POPUP_SCRIPT_NAVIDAD = '<script src="/assets/navidad-popup.v1.js" defer></script>';
 const POPUP_NAVIDAD_HASTA = 1799298000000;
 
+// Versiona /assets/*.js y *.css (se sirven con caché de 1 año): subir ASSET_V cada vez que cambie site.js o style.css.
+const ASSET_V = '20261108';
+class BumpAssets { element(e) { for (const a of ['src', 'href']) { const v = e.getAttribute(a); if (v && v.startsWith('/assets/') && /\.(js|css)$/.test(v)) e.setAttribute(a, v + '?v=' + ASSET_V); } } }
+
 class InjectHead { element(element) { element.append(PIXEL_HEAD, { html: true }); } }
 
 class InjectBody {
@@ -45,7 +49,7 @@ async function ghBaseOnRequest(context) {
     if (isPagesDev) headers.set('X-Robots-Tag', 'noindex');
     const out = new Response(response.body, { status: response.status, statusText: response.statusText, headers });
     if (!isHtml) return out;
-    return new HTMLRewriter().on('head', new InjectHead()).on('footer.site-footer', new InjectJobs()).on('body', new InjectBody(isClub)).transform(out);
+    return new HTMLRewriter().on('script[src^="/assets/"]', new BumpAssets()).on('link[href^="/assets/"]', new BumpAssets()).on('head', new InjectHead()).on('footer.site-footer', new InjectJobs()).on('body', new InjectBody(isClub)).transform(out);
   } catch (err) {
     return response;
   }
