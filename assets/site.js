@@ -35,4 +35,4 @@
     }
   });
 
-document.querySelectorAll('[data-map-shell]').forEach((shell) => { shell.style.cursor = 'pointer'; shell.addEventListener('click', () => { if (!shell || shell.dataset.loaded === 'true') return; const iframe = document.createElement('iframe'); iframe.className = 'map'; iframe.title = 'Mapa de Restaurante Bronco'; iframe.src = shell.dataset.mapSrc; iframe.loading = 'lazy'; iframe.referrerPolicy = 'no-referrer-when-downgrade'; iframe.allowFullscreen = true; shell.replaceChildren(iframe); shell.dataset.loaded = 'true'; }); }); })();
+document.querySelectorAll('[data-map-shell]').forEach((shell) => { shell.style.cursor = 'pointer'; shell.addEventListener('click', () => { if (!shell || shell.dataset.loaded === 'true') return; const iframe = document.createElement('iframe'); iframe.className = 'map'; iframe.title = 'Mapa de Restaurante Bronco'; iframe.src = shell.dataset.mapSrc; iframe.loading = 'lazy'; iframe.referrerPolicy = 'no-referrer-when-downgrade'; iframe.allowFullscreen = true; iframe.style.cssText = 'width:100%;height:100%;border:0'; shell.replaceChildren(iframe); shell.dataset.loaded = 'true'; }); }); })();
